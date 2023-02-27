@@ -4,11 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateProdutoComponent } from './create-produto/create-produto.component';
+import { ProdutoDetailsComponent } from './produto-details/produto-details.component';
+import { ProdutoListComponent } from './produto-list/produto-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateProdutoComponent } from './update-produto/update-produto.component';
 @NgModule({
   declarations: [
     AppComponent,
     CreateProdutoComponent,
+    ProdutoDetailsComponent,
+    ProdutoListComponent,
+    UpdateProdutoComponent
   ],
   imports: [
     BrowserModule,

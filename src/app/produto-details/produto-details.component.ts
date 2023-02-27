@@ -1,6 +1,6 @@
-import { Produto } from '../Produto';
+import { Produto } from '../produto';
 import { Component, OnInit, Input } from '@angular/core';
-import { ProdutoService } from '../Produto.service';
+import { ProdutoService } from '../produto.service';
 import { ProdutoListComponent } from '../produto-list/produto-list.component';
 import { Router, ActivatedRoute } from '@angular/router';
 

@@ -1,7 +1,7 @@
 import { ProdutoDetailsComponent } from '../produto-details/produto-details.component';
 import { Observable } from "rxjs";
-import { ProdutoService } from "./../Produto.service";
-import { Produto } from "./../Produto";
+import { ProdutoService } from "../produto.service";
+import { Produto } from "../produto";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 
