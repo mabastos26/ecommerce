@@ -10,8 +10,9 @@ import { ProdutoService } from '../produto.service';
 })
 export class UpdateProdutoComponent implements OnInit {
 
-  id!: number;
+  codigo!: number;
   produto!: Produto;
+  submitted=false;
 
   constructor(private route: ActivatedRoute,private router: Router,
     private produtoService: ProdutoService) { }
@@ -19,9 +20,9 @@ export class UpdateProdutoComponent implements OnInit {
   ngOnInit() {
     this.produto = new Produto();
 
-    this.id = this.route.snapshot.params['id'];
+    this.codigo = this.route.snapshot.params['codigo'];
     
-    this.produtoService.getProduto(this.id)
+    this.produtoService.getProduto(this.codigo)
       .subscribe(data => {
         console.log(data)
         this.produto = data;
@@ -29,7 +30,7 @@ export class UpdateProdutoComponent implements OnInit {
   }
 
   updateProduto() {
-    this.produtoService.updateProduto(this.id, this.produto)
+    this.produtoService.updateProduto(this.codigo, this.produto)
       .subscribe(data => console.log(data), error => console.log(error));
     this.produto = new Produto();
     this.gotoList();
@@ -40,6 +41,6 @@ export class UpdateProdutoComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/publicacoes']);
+    this.router.navigate(['/produtos']);
   }
 }

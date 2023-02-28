@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2>Publicações</h2>
+    <h2>Produtos</h2>
   </div>
   <div class="panel-body">
     <table class="table table-striped">
@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let produto of produtoss | async">
+        <tr *ngFor="let produto of produtos | async">
           <td>{{produto.codigo}}</td>
           <td>{{produto.nome}}</td>
           <td>{{produto.preco}}</td>

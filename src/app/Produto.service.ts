@@ -7,27 +7,27 @@ import { Observable } from 'rxjs';
 })
 export class ProdutoService {
 
-  private baseUrl = 'http://localhost:8080/api/v1/produto';
+  private baseUrl = 'http://localhost:8080/produto';
 
   constructor(private http: HttpClient) { }
 
-  getProduto(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getProduto(codigo: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${codigo}`);
   }
 
   createProduto(produto: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, produto);
   }
 
-  updateProduto(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  updateProduto(codigo: number, value: any): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${codigo}`, value);
   }
 
-  deleteProduto(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  deleteProduto(codigo: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${codigo}`, { responseType: 'text' });
   }
 
   getProdutosList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}/all`);
   }
 }
